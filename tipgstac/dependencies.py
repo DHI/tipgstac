@@ -161,6 +161,8 @@ async def CollectionsParams(  # noqa: C901
     matched = None
     if context := results.get("context"):
         matched = context.get("matched")
+    else:
+        matched = results.get("numberMatched")
 
     for collection in results.get("collections", []):
         collections.append(
